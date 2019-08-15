@@ -32,4 +32,9 @@ public class Tank {
 		
 	}
 
+	public int getPoint() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

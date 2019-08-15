@@ -14,4 +14,14 @@ public class GameMap {
 		
 	}
 
+	public int getWidth() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getLength() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
