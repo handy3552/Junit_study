@@ -43,6 +43,26 @@ public class AppTest {
     	//then
     }
     
+    //6.其他坦克来救援，救援成功后掉进沼泽地的坦克位置是掉进沼泽的前一步的位置；
+    @Test
+    public void should_at_before_position_when_help_tank_in_bog() {
+        //should
+    	Tank tank = new Tank();
+        tank.setMap(gameMap);
+        tank.setPosition(40, 50);
+        tank.setPoint(100);
+    	//when
+        tank.move("E", 20);
+    	
+        Tank tank2 = new Tank();
+        tank2.setMap(gameMap);
+        tank2.setPosition(90, 50);
+        tank2.setPoint(100);
+        tank2.move("W", 40);
+    	//then
+        assertEquals(new Position(49, 50), tank.getPosition());
+    }
+    
     //5.坦克掉进沼泽地时向控制台发出求救信号sos；
     @Test
     public void should_send_sos_to_controllCenter_when_tank_lost_in_bog() {
@@ -67,7 +87,7 @@ public class AppTest {
         tank.setPoint(100);
         tank.setControllCenter(controllCenter);
     	//when
-    	tank.move("E", 950);//40,50
+    	tank.move("W", 950);//40,50
     	//then
     	assertEquals(new Position(50, 50), tank.getPosition());
     }
